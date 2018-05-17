@@ -18,6 +18,7 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.tyson'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
@@ -27,5 +28,7 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-cache')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.3'
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
