@@ -2,6 +2,7 @@ package com.tyson;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,7 @@ public class MemberRepositoryImpl implements MemberRepository{
     }
 
     @Override
-    @Cacheable(value = "findMemberCache", key = "#name")
+    @CacheEvict(value = "findMemberCache", key = "#name")
     public void refresh(String name){
         logger.info(name + "의 Cache Clear!");
     }
